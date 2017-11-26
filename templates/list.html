@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title%}
+    Producteurs
+{% endblock %}
+
+{% block body%}
+
+<div class="jumbotron">
+    <h2>List Des Producteurs</h2>
+    <hr>
+<ol >
+    {%for name in names%}
+    <li><a href="/profile/{{ name[0] }}" >{{ name[1] }}</a></li>
+    {%endfor%}
+</ol>
+</div>
+
+{% endblock %}

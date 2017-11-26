@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}{% endblock %}
+{% block body %}
+
+<div class="jumbotron ">
+
+
+    <form action="/uploader" method="post" enctype="multipart/form-data">
+        <input type="file" name="csv_file" accept="csv">
+        <input type="submit">
+    </form>
+    <hr>
+
+    <ol class="list-group">
+    {%for name in folder%}
+        <div >
+            <li class="list-group-item"><a href="/select_cvs/{{ name }}" >{{ name }}</a>
+            <a href="/import_to_db/{{ name }}" class="btn btn-danger btn-sm">Import to Database</a></li>
+        </div>
+    {%endfor%}
+    </ol>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title%}
+    Producteurs
+{% endblock %}
+
+{% block body%}
+
+<div class="jumbotron">
+    <h2><I>CENTRE COLLECT DJANOUB</I></h2>
+    <h6 class="text-success"><I>LIST OF FELLAH IMPORTED TO DATABASE</I></h6>
+    <hr>
+    
+    <ol>
+        {# item is tuple of (Fellah object, boolean)#}
+        {% for item in fellahs %}
+
+        <li>
+            <a  href={{item[0].full_name}}> {{ item[0].full_name }}</a>
+            {%if item[1]%}
+                <label class="text-success"}>
+
+                <i>{{ item[1] }}</i>
+                </label>
+            {% else %}
+
+                <label class="text-secondary" >
+
+                    <i>{{ item[1] }}</i>
+                </label>
+            {%endif%}
+
+
+        </li>
+        {%endfor%}
+    </ol>
+
+</div>
+
+{% endblock %}
+

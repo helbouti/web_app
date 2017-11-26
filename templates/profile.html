@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}{% endblock %}
+{% block body %}
+
+<div class="jumbotron">
+    <div class="alert alert-success">
+    <h1>{{values[0]}} </h1>
+    <h6>TOTAL = {{values[32]}}</h6>
+    <h6>VCH = {{values[33]}}</h6>
+    <h6>MOY = {{values[34]}}</h6>
+    </div>
+    <hr>
+    <style>
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        th{
+            height:30px;
+            background-color:black;
+            color: #fff;
+        }
+
+    </style>
+
+
+    <table width="100%">
+        <thead >
+            <tr >
+                {% for i in range(31)%}
+                <th><strong style="font-size: 11px;">{{i+1}}</strong></th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                {% for i in range(values|length-4) %}
+                <td><strong style="font-size: 10px;">{{values[i+1]}}</strong></td>
+                {% endfor %}
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+</div>
+
+
+{% endblock %}
